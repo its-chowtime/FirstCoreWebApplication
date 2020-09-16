@@ -13,11 +13,11 @@ namespace FirstCoreWebApplication
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
-        }
-
+            CreateHostBuilder(args).Build().Run();  //-> Build() builds a web host and hosts the dot net core app within that Web Host
+        }                                           //It also calls Run() method which runs the web app and listens in incoming HTTP requests
+        
         public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
+            Host.CreateDefaultBuilder(args)     //-> Creates a webhost with default configs
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
